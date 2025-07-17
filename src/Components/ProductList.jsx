@@ -24,22 +24,21 @@ const ProductList = () => {
   return (
     <div className='flex flex-col justify-center items-center w-3/5'>
         <h2 className='text-3xl my-2'>Product List</h2>
-        <ul>
-            {
-                products && products.map(product) =>{
-                    <li key={product.id}>
-                        <img
-                        src={product.thumbnail}
-                        alt={product.titole}
-                       
-                        />
-                         <p>{product.title}</p>
-
-                         
-                    </li>
-                }
-            }
-        </ul>
+      <ul>
+  {
+    products && products.map((product) => {
+      return (
+        <li key={product.id}>
+          <img
+            src={product.thumbnail}
+            alt={product.title}
+          />
+          <p>{product.title}</p>
+        </li>
+      );
+    })
+  }
+</ul>
         
 
     </div>
