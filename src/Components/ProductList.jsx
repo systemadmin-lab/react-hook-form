@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-const retriveProducts = async () => {
+const retriveProducts = async ({queryKey[0]}) => {
   const response = await axios.get(
-    "https://jsonplaceholder.typicode.com/posts"
+    `https://jsonplaceholder.typicode.com/posts`
   );
   return response.data;
 };
