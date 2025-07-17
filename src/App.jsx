@@ -5,7 +5,7 @@ export default function App({id}) {
   return <>
   <ProductList/>
   <div>
-    <ProductDetails id={1}/>
+
   </div>
   
   </>;

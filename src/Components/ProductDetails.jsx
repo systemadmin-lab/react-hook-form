@@ -1,23 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-const retriveProduct = async ({ queryKey }) => {
-  const response = await axios.get(
-    `http://localhost:3000/${queryKey[0]}/${queryKey[1]}`
-  );
-  return response.data;
-};
+import React from 'react'
 
-const ProductDetails = ({ id }) => {
-  const {
-    data: product,
-    error,
-    isLoading,
-  } = useQuery({
-    queryKey: ["products", id],
-    queryFn: retriveProduct,
-  });
-console.log(id)
-  return <div></div>;
-};
+const ProductDetails = () => {
+  return (
+    <div>ProductDetails</div>
+  )
+}
 
-export default ProductDetails;
+export default ProductDetails
