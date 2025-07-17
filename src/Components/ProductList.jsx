@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
-const retriveProducts =async() =>{
+const retriveProducts =async(obj) =>{
+    console.log(obj)
     const response =await axios.get('http://localhost:3000/products');
     return response.data;
 }
