@@ -21,10 +21,10 @@ const RegistrationForm = () => {
 
   return (
     <>
-    <form>
+    <form onSubmit={handleSubmit(submitfrom)}>
        <div>
       <form onSubmit={handleSubmit(submitfrom)}>
-        <FieldSet label="Enter Your LogIn details">
+        <FieldSet label="Enter Your registration details">
           <Field label="Email"error={error.email}>
             <input
               {...register("email",{required:'email is required'})}
@@ -47,69 +47,12 @@ const RegistrationForm = () => {
               placeholder="Enter Password"
             />
           </Field>
-          <Field>
-            <button className="text-md text-white text-md cursor-pointer p-1 rounded-lg m-auto bt-purple-500 bg-black">
-              LogIn
-            </button>
-            
-          </Field>
-        </FieldSet>
-      </form>
-    </div><div>
-      <form onSubmit={handleSubmit(submitfrom)}>
-        <FieldSet label="Enter Your LogIn details">
-          <Field label="Email"error={error.email}>
+          <Field label="fullname" error={error.fname}>
             <input
-              {...register("email",{required:'email is required'})}
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter Your email adress"
-            />
-          </Field>
-
-          <Field label="Password" error={error.password}>
-            <input
-              {...register("password",{required:'password is mendatory',minLength:{
-                value:8,
-                message:'your password must be eight character'
-              }})}
-              type="password"
-              name="password"
-              id="Enter Password"
-              placeholder="Enter Password"
-            />
-          </Field>
-          <Field>
-            <button className="text-md text-white text-md cursor-pointer p-1 rounded-lg m-auto bt-purple-500 bg-black">
-              LogIn
-            </button>
-            
-          </Field>
-        </FieldSet>
-      </form>
-    </div><div>
-      <form onSubmit={handleSubmit(submitfrom)}>
-        <FieldSet label="Enter Your LogIn details">
-          <Field label="Email"error={error.email}>
-            <input
-              {...register("email",{required:'email is required'})}
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter Your email adress"
-            />
-          </Field>
-
-          <Field label="Password" error={error.password}>
-            <input
-              {...register("password",{required:'password is mendatory',minLength:{
-                value:8,
-                message:'your password must be eight character'
-              }})}
-              type="password"
-              name="password"
-              id="Enter Password"
+              {...register("fname",{required:'full name is required'})}
+              type="text"
+              name="fname"
+              id="fname"
               placeholder="Enter Password"
             />
           </Field>
