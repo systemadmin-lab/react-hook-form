@@ -3,10 +3,11 @@ import ProductList from "./Components/ProductList";
 
 export default function App({id}) {
   return <>
-  <ProductList/>
+  {/* <ProductList/>
   <div>
 
-  </div>
+  </div> */}
+  
   
   </>;
 }
