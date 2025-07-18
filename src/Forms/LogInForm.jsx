@@ -5,18 +5,29 @@ import FieldSet from "../Components/FieldSet";
 const LogInForm = () => {
   //we are importing hooks from react hook from
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit,formState:{error} ,setError} = useForm();
   const submitfrom = (f) => {
     console.log(f);
+    const user={
+        email:'rejuananik@gmail.com',
+        password:'123456789'
+        }
+        const found =f.email === user.email && f.password === user.password;
+        if(!found){
+            setError("root.random",{
+                message:'user not found ',
+                type:'error'
+            })
+        }
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit(submitfrom)}>
         <FieldSet label="Enter Your LogIn details">
-          <Field label="Email">
+          <Field label="Email"error={error.email}>
             <input
-              {...register("email")}
+              {...register("email",{required:'email is required'})}
               type="email"
               name="email"
               id="email"
@@ -24,9 +35,12 @@ const LogInForm = () => {
             />
           </Field>
 
-          <Field label="Password">
+          <Field label="Password" error={error.password}>
             <input
-              {...register("password")}
+              {...register("password",{required:'password is mendatory',minLength:{
+                value:8,
+                message:'your password must be eight character'
+              }})}
               type="password"
               name="password"
               id="Enter Password"
@@ -37,6 +51,7 @@ const LogInForm = () => {
             <button className="text-md text-white text-md cursor-pointer p-1 rounded-lg m-auto bt-purple-500 bg-black">
               LogIn
             </button>
+            
           </Field>
         </FieldSet>
       </form>
